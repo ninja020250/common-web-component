@@ -1,41 +1,89 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import Grid from '@mui/material/Grid';
 
-import { Button } from './Button';
+import ButtonComponent from '../src/components/Button';
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Button',
-  component: Button,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
-} as ComponentMeta<typeof Button>;
+  title: 'Core/Button',
+  component: ButtonComponent,
+} as ComponentMeta<typeof ButtonComponent>;
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
-
-export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {
-  primary: true,
-  label: 'Button',
+export const ContainedButton: ComponentStory<typeof ButtonComponent> = (
+  args,
+) => {
+  return (
+    <Grid container>
+      <Grid item xs={2}>
+        <ButtonComponent {...args} />
+      </Grid>
+      <Grid item xs={2}>
+        <ButtonComponent color="error" {...args} />
+      </Grid>
+      <Grid item xs={2}>
+        <ButtonComponent color="success" {...args} />
+      </Grid>
+      <Grid item xs={2}>
+        <ButtonComponent loading {...args} />
+      </Grid>
+      <Grid item xs={2}>
+        <ButtonComponent color="error" loading {...args} />
+      </Grid>
+    </Grid>
+  );
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: 'Button',
+export const OutlinedButton: ComponentStory<typeof ButtonComponent> = (
+  args,
+) => {
+  return (
+    <Grid container>
+      <Grid item xs={2}>
+        <ButtonComponent {...args} />
+      </Grid>
+      <Grid item xs={2}>
+        <ButtonComponent color="error" {...args} />
+      </Grid>
+      <Grid item xs={2}>
+        <ButtonComponent color="success" {...args} />
+      </Grid>
+      <Grid item xs={2}>
+        <ButtonComponent loading {...args} />
+      </Grid>
+    </Grid>
+  );
 };
 
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Button',
+export const TextButton: ComponentStory<typeof ButtonComponent> = (args) => {
+  return (
+    <Grid container>
+      <Grid item xs={2}>
+        <ButtonComponent {...args} />
+      </Grid>
+      <Grid item xs={2}>
+        <ButtonComponent color="error" {...args} />
+      </Grid>
+      <Grid item xs={2}>
+        <ButtonComponent color="success" {...args} />
+      </Grid>
+      <Grid item xs={2}>
+        <ButtonComponent loading {...args} />
+      </Grid>
+    </Grid>
+  );
 };
 
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button',
+ContainedButton.args = {
+  children: 'Primary Button',
+  variant: 'contained',
+};
+
+OutlinedButton.args = {
+  children: 'Outlined Button',
+  variant: 'outlined',
+};
+
+TextButton.args = {
+  children: 'Text Button',
+  variant: 'text',
 };
