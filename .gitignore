@@ -47,3 +47,7 @@ screenshot
 # Library
 storybook-static/
 lib
+
+# example website
+/example/node_modules
+/example/build

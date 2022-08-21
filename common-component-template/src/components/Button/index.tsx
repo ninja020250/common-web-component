@@ -1,10 +1,10 @@
 import { useTheme } from '@mui/material';
-import MUIButton, { ButtonProps } from '@mui/material/Button';
+import MUIButton, { ButtonProps as MUIButtonProps } from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
 
 import React from 'react';
 
-export type PropsTypes = {
+export interface ButtonProps {
   /**
    * Button will be disabled when loading automatically.
    */
@@ -13,9 +13,9 @@ export type PropsTypes = {
    * Should not use label with button children
    */
   label?: string;
-};
+}
 
-const Button: React.FC<PropsTypes & ButtonProps> = ({
+const Button = ({
   children,
   loading,
   className,
@@ -25,7 +25,7 @@ const Button: React.FC<PropsTypes & ButtonProps> = ({
   variant,
   disabled,
   ...restProps
-}) => {
+}: ButtonProps & MUIButtonProps) => {
   const theme = useTheme();
 
   return (
