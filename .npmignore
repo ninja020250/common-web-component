@@ -1,0 +1,8 @@
+src/
+docs/
+.babelrc
+webpack.config.js
+styleguide/
+package-lock.json
+yarn-error.log
+yarn.lock

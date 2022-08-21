@@ -1,0 +1,49 @@
+# Don't check auto-generated stuff into git
+coverage
+node_modules
+stats.json
+package-lock.json
+
+# production
+build
+dist
+.vscode
+
+# Cruft
+.DS_Store
+npm-debug.log
+.idea
+.awcache
+
+# dependencies
+**/node_modules
+# roadhog-api-doc ignore
+/src/utils/request-temp.js
+_roadhog-api-doc
+
+# misc
+.DS_Store
+npm-debug.log*
+yarn-error.log
+
+.idea
+*bak
+.vscode
+
+# visual studio code
+.history
+*.log
+functions/*
+.temp/**
+
+# screenshot
+screenshot
+.firebase
+.eslintcache
+
+# env
+.env
+
+# Library
+storybook-static/
+lib
