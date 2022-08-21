@@ -51,3 +51,4 @@ lib
 # example website
 /example/node_modules
 /example/build
+/example/.git
